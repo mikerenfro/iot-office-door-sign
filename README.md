@@ -38,6 +38,9 @@ On desktops, this uses some basic CSS to add compact the lists of shortcuts, and
 
 Upon clicking one of the status entry links, you'll be directed to the Twitter app (if installed), or the Twitter web interface.
 Click the Tweet button to post the status message.
+The message will automatically have the current millisecond value appended in braces.
+This is to avoid a Twitter anti-spam measure for posting the same message too often (in case I had to update my sign from "In office" to "Back at X" to "In office" very quickly if my plans changed).
+The back end Python script will remove the braces and the millisecond value before posting to the feed.
 
 ![Twitter view on phone]
 
