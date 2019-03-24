@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Door Sign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <script type="application/x-javascript" src="iui/iui.js"></script>
+    <script type="text/javascript" src="statuspage.js"></script>
+	<!-- Default CSS -->
+	<link rel="stylesheet" type="text/css" href="default.css" media="screen and (min-device-width: 800px)" />
+	<!-- iPad CSS -->
+	<link media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" rel="stylesheet" href="iui/iui.css" type="text/css" />
+	<link media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" rel="stylesheet" title="Default" href="iui/t/default/default-theme.css" type="text/css" />
+	<!-- iPhone 4 CSS -->
+	<link media="only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width:1024px) " rel="stylesheet" href="iui/iui.css" type="text/css" />
+	<link media="only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width:1024px)" rel="stylesheet" title="Default" href="iui/t/default/default-theme.css" type="text/css" />
+	<!-- iPhone CSS -->
+	<link media="only screen and (max-device-width:480px)" rel="stylesheet" href="iui/iui.css" type="text/css" />
+	<link media="only screen and (max-device-width:480px)" rel="stylesheet" title="Default" href="iui/t/default/default-theme.css" type="text/css" />
+	
+  </head>
+  <body>
+    <div class="toolbar">
+      <h1 id="pageTitle">Door Sign</h1>
+      <a id="backButton" class="button" href="javascript:void(0)"></a>
+    </div>
+    
+    <ul id="main" title="Door Sign" selected="true">
+      <li><a href="#common">Common</a></li>
+      <li><a href="#backat">Back at</a></li>
+      <li><a href="#bn">Brown</a></li>
+    </ul>
+    
+    <ul id="common" title="Common">
+      <li><a href="javascript:void(0)" onclick="status('In office');">In office</a></li>
+      <li><a href="javascript:void(0)" onclick="status('On campus. Call or text my cell if you have the number.');">On campus</a></li>
+      <li><a href="javascript:void(0)" onclick="status('At home');">At home</a></li>
+    </ul>
+    
+    <ul id="bn" title="Brown">
+      <li class="group">Second floor</li>
+      <li><a href="javascript:void(0)" onclick="status('In Brown 209');">209 (ECE)</a></li>
+      <li><a href="javascript:void(0)" onclick="status('In Brown 224');">224 (ME)</a></li>
+    </ul>
+    
+    <ul id="backat" title="Back at">
+      <li><a href="javascript:void(0)" onclick="status('Back at 8:30 AM');">8:30</a></li>
+      <li><a href="javascript:void(0)" onclick="status('Back at 9:00 AM');">9:00</a></li>
+    </ul>
+  </body>
+</html>

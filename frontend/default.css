@@ -1,0 +1,19 @@
+/* CSS for regular PC browsers */
+body {  font-family: sans-serif;
+}
+a:link { text-decoration: none;
+}
+ul { display:block;
+}
+ul#main { display: none;
+}
+ul[title]:before { display: block;
+ content: attr(title);
+ font-size: 120%; font-weight: bold;
+}
+li { display: inline; padding-right: .6em; white-space: nowrap;
+}
+li.group { display: inline; font-weight: bold;
+}
+li.group:after { content:":";
+}
