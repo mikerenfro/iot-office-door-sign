@@ -14,7 +14,7 @@ After I changed jobs to high performance computing systems administrator for the
 So the Chumby was modified to alternate between displaying a PNG of my HPC's usage and displaying my RSS feed.
 
 And then, my Chumby died sometime last year.
-So it was finally time to explore other options, and the PyPortal had just launched.
+So it was finally time to explore other options, and the [PyPortal](https://www.adafruit.com/product/4116) had just launched.
 The cost of a Raspberry Pi and an LCD was more than I wanted to spend initially, and would have been bulkier.
 
 ## Prerequisites
