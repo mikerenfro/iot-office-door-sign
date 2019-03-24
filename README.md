@@ -20,7 +20,7 @@ The cost of a Raspberry Pi and an LCD was more than I wanted to spend initially,
 ## Prerequisites
 
 - Adafruit PyPortal (SD card is technically optional, but I've not tested without one)
-- Web server that can run cron jobs using Python 3
+- Web server that can run cron jobs using Python 2 (Python 3 may work, but is untested)
 - Web browser (phone or otherwise)
 - Twitter account dedicated to the sign status messages
 
