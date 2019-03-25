@@ -1,5 +1,7 @@
 # An Internet of Things Office Door Sign using Adafruit's PyPortal
 
+![Door sign]
+
 ## Motivation
 
 My previous job was research and development engineer for a university.
