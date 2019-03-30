@@ -5,6 +5,7 @@ from adafruit_bitmap_font import bitmap_font
 from adafruit_display_text.label import Label
 import json
 from secrets import secrets
+import gc
 
 # Set up where we'll be fetching data from. Presumes a JSON structure of:
 # [{"status":"At home",
@@ -69,7 +70,11 @@ for k, entry in status_dict.items():
 refresh_time = None
 raw_status_dict_old = {}
 
+pyportal.get_local_time()
+start_time = time.monotonic()
+
 while True:
+    print("{0} since start".format(time.monotonic()-start_time))
     # Periodically, sync time and grab a new image
     if (not refresh_time) or (time.monotonic() - refresh_time) > image_refresh_time:
         try:
@@ -84,6 +89,7 @@ while True:
             continue
     # Every time, grab the status JSON and check for changes to text area contents
     try:
+        gc.collect()
         print("Grabbing new status")
         json_file = DATA_SOURCE.split('/')[-1]
         if pyportal._sdcard:
