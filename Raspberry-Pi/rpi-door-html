@@ -1,0 +1,95 @@
+<html>
+<head>
+    <style type="text/css">
+        body { background-color: #333; color: #ffffff;}
+        .status {padding: 20px; background:#242424; background:rgba(36,36,36,0.5);}
+        .name {text-align: left; font-family: sans-serif; font-size: 30px;}
+        .jobtitle {text-align: right; font-family: sans-serif; font-size: 20px;}
+        .statusmessage {text-align: left; font-family: sans-serif; font-size: 30px;}
+        .statusdate {text-align: right; font-family: sans-serif; font-size: 20px;}
+    </style>
+</head>
+<body>
+    <center>
+        <table>
+            <tr style="vertical-align: top">
+                <td width="400px" height="400px">
+                    <img id="img" src="https://IMAGE1_URL"/>
+                </td>
+                <td width="350px" class="status">
+                    <div class="name">Mike Renfro, PhD (renfro@tntech.edu)</div>
+                    <div class="jobtitle">HPC Systems Administrator</div>
+                    <span class="statusmessage"><statusmessage></statusmessage></span>
+                    <span class="statusdate"><statusdate></statusdate></span>
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+        $(window).resize(function(){
+          $.backstretch("BACKGROUND.jpg", {speed: 150});
+          })
+          .resize();//trigger resize on page load
+          });
+    </script>
+    <script>
+        function changeImage()
+        {
+            var img = document.getElementById("img");
+            img.src = images[x];
+            x++;
+
+            if(x >= images.length){
+                x = 0;
+            }
+
+            setTimeout("changeImage()", 10000);
+        }
+        function getJson() {
+            var requestURL = 'https://JSON_URL';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                var jsonData = request.response;
+                populateStatus(jsonData[0]);
+            }
+        }
+        function populateStatus(jsonObj) {
+            var statusMessage = document.querySelector('statusmessage');
+            var statusDate = document.querySelector('statusdate');
+            var myH1 = document.createElement('p');
+            myH1.textContent = jsonObj['status'];
+            while(statusMessage.firstChild){
+                statusMessage.removeChild(statusMessage.firstChild);
+              }
+            statusMessage.appendChild(myH1);
+
+            var myPara = document.createElement('p');
+            myPara.textContent = jsonObj['date']
+            while(statusDate.firstChild){
+                statusDate.removeChild(statusDate.firstChild);
+              }
+            statusDate.appendChild(myPara);
+            setTimeout("getJson()", 30000);
+        }
+
+        var images = [],
+        x = 1;
+
+        images[0] = "https://IMAGE1_URL";
+        images[1] = "https://IMAGE2_URL";
+        images[2] = "https://IMAGE3_URL";
+        images[3] = "https://IMAGE4_URL";
+        setTimeout("changeImage()", 10000);
+
+        setTimeout("getJson()", 30000);
+        getJson();
+
+    </script>
+</body>
+</html>
