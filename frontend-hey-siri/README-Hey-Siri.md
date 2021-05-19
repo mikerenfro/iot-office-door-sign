@@ -1,7 +1,5 @@
 # An Internet of Things Office Door Sign Using iOS Shortcuts
 
-![Door sign]
-
 ## Motivation
 
 See [the original README](https://github.com/mikerenfro/iot-office-door-sign) and [the Raspberry Pi variant](https://github.com/mikerenfro/iot-office-door-sign/blob/master/Raspberry-Pi/README-Raspberry.md), except by mid-2021, I looked into if I could post messages to the door sign with "Hey, Siri" on either my watch or my phone. Turns out the watch was a no-go, but the phone works fine using Shortcuts.
